@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+    <br>
+<br>
+
+    <div class="container">
+    <h1>Cadastro de clientes</h1>
+    <form action="/usuario/salvar" method="post">
+        <div class="form-group">
+            <input class="form-control" type="text" name="nome" placeholder="Nome" id=""/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="email" id=""/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="date"  name="dataNascimento" placeholder="dataNascimento" id=""/>
+        </div>
+        
+        <div class="form-group">
+            <input class="form-control" type="text" name="idade" placeholder="idade" id=""/>
+        </div>
+     <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+    </div>
+    <br>
+    <br>
+    <a href="/"></a>
+<div class="container">
+        <h2>Consulta Clientes Cadastrados</h2>
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">email</th>
+      <th scope="col">data de Nascimento</th>
+      <th scope="col">idade</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+     {{#each dados}}
+    <tr>
+       
+      <td>{{this.id_usuario}}</td>
+      <td>{{this.Nome}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.data_nascimento}}</td>
+      <td>{{this.idade}}</td>
+       
+    </tr>
+{{/each}}
+ 
+  </tbody>
+  
+</table>
+
+    </div>
+</body>
+
+</html>
+
